@@ -5,7 +5,7 @@ using UnityEngine;
 public class DragFingerRotation : MonoBehaviour
 {
     private Touch touch;
-    private float speedMod = 0.001f;
+    private float speedModifier = 0.07f;
 
     private void Update()
     {
@@ -15,12 +15,8 @@ public class DragFingerRotation : MonoBehaviour
             
             if (touch.phase == TouchPhase.Moved)
             {
-                transform.rotation = new Quaternion(
-                    transform.rotation.x,
-                    transform.rotation.y,
-                    transform.rotation.z + touch.deltaPosition.x * speedMod,
-                    transform.rotation.w
-                    );
+                Quaternion deltaQuaternionRot = Quaternion.AngleAxis(transform.rotation.z + touch.deltaPosition.x * speedModifier, Vector3.forward);
+                transform.rotation = transform.rotation * deltaQuaternionRot;
             }
         } 
     }
