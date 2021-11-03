@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Stary blok umiera");
+        Destroy(collision.collider.gameObject);
     }
 }
