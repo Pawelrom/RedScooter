@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject parentForWall;
     private void OnTriggerEnter(Collider other)
     {
-        var wall = Instantiate(tunnelWall, new Vector3(0, 0, 25), Quaternion.identity);
+        var wall = Instantiate(tunnelWall, new Vector3(0, 0, 45), Quaternion.identity);
         wall.transform.parent = parentForWall.transform;
     }
 }
