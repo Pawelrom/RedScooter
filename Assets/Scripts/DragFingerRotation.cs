@@ -5,7 +5,7 @@ using UnityEngine;
 public class DragFingerRotation : MonoBehaviour
 {
     private Touch touch;
-    private float speedModifier = 0.25f;
+    private float speedModifier = 0.07f;
     private Quaternion rotationZ;
     private void Update()
     {
